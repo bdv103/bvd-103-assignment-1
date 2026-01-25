@@ -1,65 +1,73 @@
-import { Collection, MongoClient } from 'mongodb'; 
-
-export type BookID = string;
+import { MongoClient, Collection } from 'mongodb';
 
 export interface Book {
-    id?: BookID,
-    name: string,
-    author: string,
-    description: string,
-    price: number,
-    image: string,
-};
+  id?: number;
+  title: string;
+  author?: string;
+  description?: string;
+  price?: number;
+  image?: string;
+}
 
-// Database connection setup
-const url = 'mongodb://mongo:27017'; 
+const url = 'mongodb://mongo:27017';
+const dbName = 'mcmasterful';
 const client = new MongoClient(url);
-const dbName = 'mcmasterful'; 
+
+let cachedCollection: Collection<Book> | null = null;
 
 async function getCollection(): Promise<Collection<Book>> {
-    await client.connect(); 
-    const db = client.db(dbName);
-    return db.collection<Book>('books'); 
+  if (cachedCollection) return cachedCollection;
+
+  await client.connect();
+  const db = client.db(dbName);
+  cachedCollection = db.collection<Book>('books');
+
+  return cachedCollection;
 }
 
-// 1. List Function: Fetches all books from the database
-async function listBooks(filters?: Array<{from?: number, to?: number}>) : Promise<Book[]>{
+const assignment = {
+  async listBooks(): Promise<Book[]> {
     const collection = await getCollection();
-    
-    // find({}) retrieves everything; toArray() converts it for the frontend
-    const books = await collection.find({}).toArray(); 
-    
-    return books;
-}
+    return collection.find({}).toArray();
+  },
 
-// 2. Create & Update Function: add new books & edit old ones
-async function createOrUpdateBook(book: Book): Promise<BookID> {
+  async createOrUpdateBook(book: Book): Promise<Book> {
+    if (!book.title) {
+      throw new Error('Book must have a title');
+    }
+
     const collection = await getCollection();
-    
-    const filter = { name: book.name }; 
-    
+
+    // Generate numeric ID if not provided
+    if (!book.id) {
+      const lastBook = await collection
+        .find({})
+        .sort({ id: -1 })
+        .limit(1)
+        .toArray();
+
+      book.id = lastBook[0]?.id ? lastBook[0].id + 1 : 1;
+    }
+
     await collection.updateOne(
-        filter, 
-        { $set: book }, 
-        { upsert: true } //update if true (found), create if not
+      { id: book.id },
+      { $set: book },
+      { upsert: true }
     );
-    
-    return book.name; 
-}
 
-// 3. Remove Function: deletes a book based on its ID (name)
-async function removeBook(bookId: BookID): Promise<void> {
+    return book;
+  },
+
+  async removeBook(id: number | string): Promise<boolean> {
     const collection = await getCollection();
-    
-    // Delete the document where the name matches the ID
-    await collection.deleteOne({ name: bookId });
-}
 
-const assignment = "assignment-2";
+    const bookId =
+      typeof id === 'string' ? parseInt(id, 10) : id;
 
-export default {
-    assignment,
-    createOrUpdateBook,
-    removeBook,
-    listBooks
+    await collection.deleteOne({ id: bookId });
+
+    return true;
+  }
 };
+
+export default assignment;

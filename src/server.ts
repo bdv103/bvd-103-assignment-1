@@ -1,18 +1,26 @@
 import Koa from 'koa';
-import cors from '@koa/cors';
+import Router from '@koa/router';
 import bodyParser from 'koa-bodyparser';
-import qs from 'koa-qs';
+import cors from '@koa/cors';
 import bookRoutes from './books/book_routes';
 
 const app = new Koa();
-qs(app);
+const router = new Router();
 
+const PORT = 9080;
+
+// middleware
 app.use(cors());
 app.use(bodyParser());
-app.use(bookRoutes.allowedMethods());
-app.use(bookRoutes.routes());
 
-const PORT = 3000;
+// ,ount /books routes
+router.use('/books', bookRoutes.routes(), bookRoutes.allowedMethods());
+
+// apply router to app
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+// start server
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Koa server running at http://localhost:${PORT}`);
 });

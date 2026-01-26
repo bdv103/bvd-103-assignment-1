@@ -7,10 +7,11 @@ services:
     volumes:
       - ../..:/workspaces:cached
     command: sleep infinity
+    ports:
+      - "3000:3000"
 
   mongo:
     image: mongo:latest
     restart: always
-    ports: 
-     - "27017:27017"
-    
+    ports:
+      - "27017:27017"

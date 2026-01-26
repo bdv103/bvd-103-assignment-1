@@ -1,5 +1,125 @@
-###
-GET http://localhost:3000/books
+### Get all books
+GET http://localhost:3000/books/
 
 ###
-GET http://localhost:3000/books?filters[0][from]=20&filters[0][to]=40
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "name": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "price": 12.99,
+  "description": "A classic novel exploring justice and morality",
+  "image": "https://covers.openlibrary.org/b/id/8228691-L.jpg"
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "name": "1984",
+  "author": "George Orwell",
+  "price": 10.99,
+  "description": "A dystopian novel about surveillance and totalitarianism.",
+  "image": "https://covers.openlibrary.org/b/id/7222246-L.jpg"
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "name": "Pride and Prejudice",
+  "author": "Jane Austen",
+  "price": 9.99,
+  "description": "A romantic novel exploring manners, marriage, and society.",
+  "image": "https://covers.openlibrary.org/b/id/8091016-L.jpg"
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "name": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "price": 11.99,
+  "description": "A tragic story of wealth, love, and the American Dream.",
+  "image": "https://covers.openlibrary.org/b/id/7222276-L.jpg"
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "name": "Moby-Dick",
+  "author": "Herman Melville",
+  "price": 14.99,
+  "description": "A whaling voyage becomes an obsession with a legendary white whale.",
+  "image": "https://covers.openlibrary.org/b/id/8100921-L.jpg"
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "name": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "price": 10.49,
+  "description": "A teenager’s journey through alienation and identity.",
+  "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg"
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "name": "Brave New World",
+  "author": "Aldous Huxley",
+  "price": 13.49,
+  "description": "A futuristic society shaped by technology and conditioning.",
+  "image": "https://covers.openlibrary.org/b/id/8775116-L.jpg"
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "name": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "price": 15.99,
+  "description": "Bilbo Baggins embarks on an unexpected adventure.",
+  "image": "https://covers.openlibrary.org/b/id/6979861-L.jpg"
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "name": "Fahrenheit 451",
+  "author": "Ray Bradbury",
+  "price": 12.49,
+  "description": "A fireman questions a society where books are outlawed.",
+  "image": "https://covers.openlibrary.org/b/id/9251990-L.jpg"
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "name": "The Lord of the Rings",
+  "author": "J.R.R. Tolkien",
+  "price": 19.99,
+  "description": "An epic quest to destroy the One Ring.",
+  "image": "https://covers.openlibrary.org/b/id/8231990-L.jpg"
+}
+
+###
+DELETE http://localhost:3000/books/4

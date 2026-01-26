@@ -1,41 +1,20 @@
 import Router from '@koa/router';
-import assignment from '../../adapter/assignment-2';
-import type { Book } from '../../adapter/assignment-2';
-
 const router = new Router();
+let books: any[] = [];
 
-// GET /books
-router.get('/', async (ctx) => {
-  try {
-    const books: Book[] = await assignment.listBooks();
+router.get('/books', (ctx) => {
     ctx.body = books;
-  } catch (err) {
-    ctx.status = 500;
-    ctx.body = { error: 'Failed to fetch books' };
-  }
 });
 
-// POST /books
-router.post('/', async (ctx) => {
-  try {
-    const body = ctx.request.body as Book;
-    const newBook: Book = await assignment.createOrUpdateBook(body);
-    ctx.body = newBook;
-  } catch (err) {
-    ctx.status = 400;
-    ctx.body = { error: (err as Error).message };
-  }
-});
-
-// DELETE /books/:id
-router.delete('/:id', async (ctx) => {
-  try {
-    const success = await assignment.removeBook(ctx.params.id);
-    ctx.body = { success };
-  } catch (err) {
-    ctx.status = 500;
-    ctx.body = { error: 'Failed to remove book' };
-  }
+router.post('/books', (ctx) => {
+    // Cast the body to 'any' to fix the "type is unknown" error
+    const book = ctx.request.body as any; 
+    
+    book.id = books.length + 1;
+    books.push(book);
+    
+    ctx.status = 201;
+    ctx.body = book;
 });
 
 export default router;

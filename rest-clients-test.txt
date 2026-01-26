@@ -1,0 +1,346 @@
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "price": 12.99,
+  "description": "A classic novel exploring justice and morality",
+  "image": "https://covers.openlibrary.org/b/id/8228691-L.jpg"
+}
+
+Response:
+{
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "price": 12.99,
+  "description": "A classic novel exploring justice and morality",
+  "image": "https://covers.openlibrary.org/b/id/8228691-L.jpg",
+  "id": 2
+}
+
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "1984",
+  "author": "George Orwell",
+  "price": 10.99,
+  "description": "A dystopian novel about surveillance and totalitarianism.",
+  "image": "https://covers.openlibrary.org/b/id/7222246-L.jpg"
+}
+
+Response:
+{
+  "title": "1984",
+  "author": "George Orwell",
+  "price": 10.99,
+  "description": "A dystopian novel about surveillance and totalitarianism.",
+  "image": "https://covers.openlibrary.org/b/id/7222246-L.jpg",
+  "id": 3
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "Pride and Prejudice",
+  "author": "Jane Austen",
+  "price": 9.99,
+  "description": "A romantic novel exploring manners, marriage, and society.",
+  "image": "https://covers.openlibrary.org/b/id/8091016-L.jpg"
+}
+
+Response:
+{
+  "title": "Pride and Prejudice",
+  "author": "Jane Austen",
+  "price": 9.99,
+  "description": "A romantic novel exploring manners, marriage, and society.",
+  "image": "https://covers.openlibrary.org/b/id/8091016-L.jpg",
+  "id": 4
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "price": 11.99,
+  "description": "A tragic story of wealth, love, and the American Dream.",
+  "image": "https://covers.openlibrary.org/b/id/7222276-L.jpg"
+}
+
+Response:
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "price": 11.99,
+  "description": "A tragic story of wealth, love, and the American Dream.",
+  "image": "https://covers.openlibrary.org/b/id/7222276-L.jpg",
+  "id": 5
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "Moby-Dick",
+  "author": "Herman Melville",
+  "price": 14.99,
+  "description": "A whaling voyage becomes an obsession with a legendary white whale.",
+  "image": "https://covers.openlibrary.org/b/id/8100921-L.jpg"
+}
+
+Response:
+{
+  "title": "Moby-Dick",
+  "author": "Herman Melville",
+  "price": 14.99,
+  "description": "A whaling voyage becomes an obsession with a legendary white whale.",
+  "image": "https://covers.openlibrary.org/b/id/8100921-L.jpg",
+  "id": 6
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "price": 10.49,
+  "description": "A teenager’s journey through alienation and identity.",
+  "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg"
+}
+
+Response:
+{
+  "title": "The Catcher in the Rye",
+  "author": "J.D. Salinger",
+  "price": 10.49,
+  "description": "A teenager’s journey through alienation and identity.",
+  "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg",
+  "id": 7
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "Brave New World",
+  "author": "Aldous Huxley",
+  "price": 13.49,
+  "description": "A futuristic society shaped by technology and conditioning.",
+  "image": "https://covers.openlibrary.org/b/id/8775116-L.jpg"
+}
+
+Response:
+{
+  "title": "Brave New World",
+  "author": "Aldous Huxley",
+  "price": 13.49,
+  "description": "A futuristic society shaped by technology and conditioning.",
+  "image": "https://covers.openlibrary.org/b/id/8775116-L.jpg",
+  "id": 8
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "price": 15.99,
+  "description": "Bilbo Baggins embarks on an unexpected adventure.",
+  "image": "https://covers.openlibrary.org/b/id/6979861-L.jpg"
+}
+
+Response:
+{
+  "title": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "price": 15.99,
+  "description": "Bilbo Baggins embarks on an unexpected adventure.",
+  "image": "https://covers.openlibrary.org/b/id/6979861-L.jpg",
+  "id": 9
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "Fahrenheit 451",
+  "author": "Ray Bradbury",
+  "price": 12.49,
+  "description": "A fireman questions a society where books are outlawed.",
+  "image": "https://covers.openlibrary.org/b/id/9251990-L.jpg"
+}
+
+Response:
+{
+  "title": "Fahrenheit 451",
+  "author": "Ray Bradbury",
+  "price": 12.49,
+  "description": "A fireman questions a society where books are outlawed.",
+  "image": "https://covers.openlibrary.org/b/id/9251990-L.jpg",
+  "id": 10
+}
+
+###
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "The Lord of the Rings",
+  "author": "J.R.R. Tolkien",
+  "price": 19.99,
+  "description": "An epic quest to destroy the One Ring.",
+  "image": "https://covers.openlibrary.org/b/id/8231990-L.jpg"
+}
+
+Response:
+[
+{
+  "title": "The Lord of the Rings",
+  "author": "J.R.R. Tolkien",
+  "price": 19.99,
+  "description": "An epic quest to destroy the One Ring.",
+  "image": "https://covers.openlibrary.org/b/id/8231990-L.jpg",
+  "id": 11
+}
+___________________________________________________
+
+GET http://localhost:3000/books/
+  {
+    "_id": "69728b15fa838cf43873a921",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "year": 1925
+  },
+  {
+    "_id": "69728b15fa838cf43873a922",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "year": 1960
+  },
+  {
+    "_id": "6976a3a9649d3af3fd94c697",
+    "id": 1,
+    "author": "Harper Lee",
+    "description": "A classic novel exploring justice and morality in the American South.",
+    "image": "https://covers.openlibrary.org/b/id/8228691-L.jpg",
+    "price": 12.99,
+    "title": "To Kill a Mockingbird"
+  },
+  {
+    "_id": "6976a68edc35a3864aa05cb8",
+    "id": 2,
+    "author": "Harper Lee",
+    "description": "A classic novel exploring justice and morality in the American South.",
+    "image": "https://covers.openlibrary.org/b/id/8228691-L.jpg",
+    "price": 12.99,
+    "title": "To Kill a Mockingbird"
+  },
+  {
+    "_id": "6976a87adc35a3864aa05cb9",
+    "id": 3,
+    "author": "George Orwell",
+    "description": "A dystopian novel about surveillance and totalitarianism.",
+    "image": "https://covers.openlibrary.org/b/id/7222246-L.jpg",
+    "price": 10.99,
+    "title": "1984"
+  },
+  {
+    "_id": "6976a8c3dc35a3864aa05cba",
+    "id": 4,
+    "author": "Jane Austen",
+    "description": "A romantic novel exploring manners, marriage, and society.",
+    "image": "https://covers.openlibrary.org/b/id/8091016-L.jpg",
+    "price": 9.99,
+    "title": "Pride and Prejudice"
+  },
+  {
+    "_id": "6976a8eadc35a3864aa05cbb",
+    "id": 5,
+    "author": "F. Scott Fitzgerald",
+    "description": "A tragic story of wealth, love, and the American Dream.",
+    "image": "https://covers.openlibrary.org/b/id/7222276-L.jpg",
+    "price": 11.99,
+    "title": "The Great Gatsby"
+  },
+  {
+    "_id": "6976a918dc35a3864aa05cbc",
+    "id": 6,
+    "author": "Herman Melville",
+    "description": "A whaling voyage becomes an obsession with a legendary white whale.",
+    "image": "https://covers.openlibrary.org/b/id/8100921-L.jpg",
+    "price": 14.99,
+    "title": "Moby-Dick"
+  },
+  {
+    "_id": "6976a93cdc35a3864aa05cbd",
+    "id": 7,
+    "author": "J.D. Salinger",
+    "description": "A teenager’s journey through alienation and identity.",
+    "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg",
+    "price": 10.49,
+    "title": "The Catcher in the Rye"
+  },
+  {
+    "_id": "6976a965dc35a3864aa05cbe",
+    "id": 8,
+    "author": "Aldous Huxley",
+    "description": "A futuristic society shaped by technology and conditioning.",
+    "image": "https://covers.openlibrary.org/b/id/8775116-L.jpg",
+    "price": 13.49,
+    "title": "Brave New World"
+  },
+  {
+    "_id": "6976a982dc35a3864aa05cbf",
+    "id": 9,
+    "author": "J.R.R. Tolkien",
+    "description": "Bilbo Baggins embarks on an unexpected adventure.",
+    "image": "https://covers.openlibrary.org/b/id/6979861-L.jpg",
+    "price": 15.99,
+    "title": "The Hobbit"
+  },
+  {
+    "_id": "6976a9aedc35a3864aa05cc0",
+    "id": 10,
+    "author": "Ray Bradbury",
+    "description": "A fireman questions a society where books are outlawed.",
+    "image": "https://covers.openlibrary.org/b/id/9251990-L.jpg",
+    "price": 12.49,
+    "title": "Fahrenheit 451"
+  },
+  {
+    "_id": "6976a9ccdc35a3864aa05cc1",
+    "id": 11,
+    "author": "J.R.R. Tolkien",
+    "description": "An epic quest to destroy the One Ring.",
+    "image": "https://covers.openlibrary.org/b/id/8231990-L.jpg",
+    "price": 19.99,
+    "title": "The Lord of the Rings"
+  }
+]
+_____________________________________________________
+
+###
+DELETE http://localhost:3000/books/4
+
+Response: 
+{
+  "success": true
+}
+
